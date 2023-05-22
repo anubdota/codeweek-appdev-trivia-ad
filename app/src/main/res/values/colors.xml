@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="greyDark">#5A5A5A</color>
+    <color name="green">#06c720</color>
+    <color name="green_light">#73da70</color>
+    <color name="blue">#06adc7</color>
+    <color name="blue_light">#4ed1e7</color>
+    <color name="red">#F44336</color>
+    <color name="red_light">#EF9A9A</color>
+    <color name="celestial_blue">#20a4f3</color>
+    <color name="celestial_blue_dark">#1d85d0</color>
+    <color name="organo">#f36d20</color>
+    <color name="organo_light">#ff9925</color>
+</resources>
