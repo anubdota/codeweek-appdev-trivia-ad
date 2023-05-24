@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/theLord"
         android:layout_width="160dp"
         android:layout_height="200dp"
         android:layout_marginBottom="15dp"
@@ -16,14 +17,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/quizmaster" />
 
+
+    <Button
+        android:id="@+id/easy_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:layout_marginStart="30dp"
+        android:text="Easy"
+        app:layout_constraintBottom_toTopOf="@+id/startQuiz"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/medium_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Medium"
+        app:layout_constraintBottom_toTopOf="@+id/startQuiz"
+        app:layout_constraintEnd_toStartOf="@+id/hard_mode"
+        app:layout_constraintStart_toEndOf="@+id/easy_mode"
+        />
+
+    <Button
+        android:id="@+id/hard_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="Hard"
+        app:layout_constraintBottom_toTopOf="@+id/startQuiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
     <Button
         android:id="@+id/startQuiz"
-        android:text="Start Quiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       android:layout_marginBottom="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="@color/green_dark"
+        android:text=" Start Quizzing"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

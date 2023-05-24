@@ -3,5 +3,10 @@
     <style name="Base.Theme.TriviaManiac" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/celestial_blue</item>
+        <item name="colorPrimaryVariant">@color/celestial_blue_dark</item>
+        <item name="colorSecondary">@color/organo_light</item>
+        <item name="colorSecondaryVariant">@color/organo</item>
+        <item name="android:background">@color/green_deep</item>
     </style>
 </resources>

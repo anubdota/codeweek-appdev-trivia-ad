@@ -22,8 +22,5 @@ class Score : AppCompatActivity() {
             startActivity(intentMain)
         }
 
-
-
-
     }
 }
