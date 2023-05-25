@@ -28,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="SCORE" />
     <ImageView
+        android:id="@+id/happy_quiz_master"
         android:layout_width="120dp"
         android:layout_height="160dp"
         android:layout_marginBottom="15dp"
@@ -35,6 +36,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/k" />
+    <TextView
+        android:id="@+id/last_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Last Score: 10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/happy_quiz_master"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"/>
+
+
     <Button
         android:id="@+id/home"
         android:layout_width="wrap_content"
@@ -44,7 +57,7 @@
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/score"
+        app:layout_constraintTop_toBottomOf="@id/happy_quiz_master"
         android:backgroundTint="@color/green_dark"/>
 
 

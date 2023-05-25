@@ -35,6 +35,18 @@
         android:textSize="24sp"
         android:textColor="@color/greyDark"
         tools:text="/10"/>
+    <TextView
+        android:id="@+id/time_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/questionNumber"
+        app:layout_constraintBottom_toBottomOf="@id/questionNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text = "5"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="24sp"
+        />
 
     <TextView
         android:id="@+id/questionTop"

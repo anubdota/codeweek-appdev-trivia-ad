@@ -3,6 +3,7 @@ package com.example.triviamaniac
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.text.Html
 import android.util.Log
 import android.widget.Button
@@ -19,6 +20,7 @@ import java.io.IOException
 
 class QuestionPage : AppCompatActivity() {
     lateinit var binding: ActivityQuestionPageBinding
+    private var timer: CountDownTimer? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,8 +40,6 @@ class QuestionPage : AppCompatActivity() {
                 Log.d("MainActivity","${values.apiResponseQuestionList.results.size} size of list created")
                 Log.d("MainActivity","${values.apiResponseQuestionList.results}")
                 setq = values.apiResponseQuestionList.results.toMutableList()
-
-
             }
             catch(e: IOException) {
                 Toast.makeText(this@QuestionPage, "You might not have internet connection",Toast.LENGTH_SHORT).show()
@@ -60,6 +60,8 @@ class QuestionPage : AppCompatActivity() {
             binding.option4.isVisible = true
             binding.nextQuestion.isVisible = true
 
+
+
         fun createQues() {
             if (position < setq.size) {
                 var curQues = setq[position]
@@ -79,6 +81,31 @@ class QuestionPage : AppCompatActivity() {
                 binding.option2.text = options[1]
                 binding.option3.text = options[2]
                 binding.option4.text = options[3]
+
+                timer?.cancel()
+                timer = object : CountDownTimer(10000, 1000) {
+
+                    // Callback function, fired on regular interval
+                    override fun onTick(millisUntilFinished: Long) {
+                        binding.timeLeft.setText("${millisUntilFinished / 1000}")
+                    }
+
+                    // Callback function, fired
+                    // when the time is up
+                    override fun onFinish() {
+                        binding.timeLeft.setText("0")
+                        binding.option1.setClickable(false)
+                        binding.option2.setClickable(false)
+                        binding.option3.setClickable(false)
+                        binding.option4.setClickable(false)
+                        if(binding.option1.text == curQues.correct_answer){binding.option1.setBackgroundColor(getColor(R.color.green_light))}
+                        if(binding.option2.text == curQues.correct_answer){binding.option2.setBackgroundColor(getColor(R.color.green_light))}
+                        if(binding.option3.text == curQues.correct_answer){binding.option3.setBackgroundColor(getColor(R.color.green_light))}
+                        if(binding.option4.text == curQues.correct_answer){binding.option4.setBackgroundColor(getColor(R.color.green_light))}
+
+                    }
+                }.start()
+
 
             } else {
                 //end quiz frame here
@@ -115,6 +142,7 @@ class QuestionPage : AppCompatActivity() {
 
         }
         createQues()
+
         //add listeners to all
         binding.option1.setOnClickListener{
             onChooseOption(binding.option1)
