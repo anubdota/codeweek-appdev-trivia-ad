@@ -81,13 +81,13 @@ class QuestionPage : AppCompatActivity() {
                 binding.option2.text = options[1]
                 binding.option3.text = options[2]
                 binding.option4.text = options[3]
-
                 timer?.cancel()
-                timer = object : CountDownTimer(10000, 1000) {
+                timer = object : CountDownTimer(15000, 1000) {
 
                     // Callback function, fired on regular interval
                     override fun onTick(millisUntilFinished: Long) {
                         binding.timeLeft.setText("${millisUntilFinished / 1000}")
+
                     }
 
                     // Callback function, fired
